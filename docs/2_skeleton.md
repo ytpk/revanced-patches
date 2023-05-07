@@ -56,9 +56,9 @@ Lets start with understanding, how a patch is structured. A patch is mainly buil
 
    - Every visible patch **should** be annotated with `@Patch` to be picked up by `PatchBundle` from the [introduction](1_introduction.md). Patches which are not annotated with `@Patch` can be referenced by other patches. We refer to those as _patch dependencies_. Patch dependencies are useful to structure multiple patches.
 
-     Example: _To add settings switches to an app, first, a patch is required that can provide a basic framework for other patches to add their toggles to that app. Those patches refer to the dependency patch and use its framework to add their toggles to an app. The [ReVanced Patcher](https://github.com/revanced/revanced-patcher) will execute the dependency and then the patch itself. The dependency can prepare a preference screen when executed and then initialize itself for further use by other patches._
+     Example: _To add settings switches to an app, first, a patch is required that can provide a basic framework for other patches to add their toggles to that app. Those patches refer to the dependency patch and use its framework to add their toggles to an app. [ReVanced Patcher](https://github.com/revanced/revanced-patcher) will execute the dependency and then the patch itself. The dependency can prepare a preference screen when executed and then initialize itself for further use by other patches._
 
-   - Visible patches **should** be annotated with `@Name`. This annotation does not serve any functional purpose. Instead, it allows referring to the patch with a name. The [ReVanced Patches](https://github.com/revanced/revanced-patches) use _kebab-casing_ by convention, but any name can be used for patches. Patches with no `@Patch` annotation do not require the `@Name` annotation, because they are only useable as dependencies for other patches, and therefore are not visible through `PatchBundle`.
+   - Visible patches **should** be annotated with `@Name`. This annotation does not serve any functional purpose. Instead, it allows referring to the patch with a name. [ReVanced Patches](https://github.com/revanced/revanced-patches) use _kebab-casing_ by convention, but any name can be used for patches. Patches with no `@Patch` annotation do not require the `@Name` annotation, because they are only useable as dependencies for other patches, and therefore are not visible through `PatchBundle`.
 
    - Visible patches should be annotated with `@Description`. This annotation serves the same purpose as the annotation `@Name`. It is used to give the patch a short description.
 
@@ -88,7 +88,7 @@ Lets start with understanding, how a patch is structured. A patch is mainly buil
 
    Usually, patches consist out of a single class. The class can be used to create methods and fields for the patch, or provide a framework for other patches, in case it is meant to be used as a dependency patch.
 
-   The [ReVanced Patches](https://github.com/revanced/revanced-patches) follow a convention to name the class of patches:
+   [ReVanced Patches](https://github.com/revanced/revanced-patches) follow a convention to name the class of patches:
 
    Example: _The class for a patch which disables ads should be called `DisableAdsPatch`, for a patch which adds a new download feature it should be called `DownloadsPatch`._
 
