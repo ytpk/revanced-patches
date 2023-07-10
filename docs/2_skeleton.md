@@ -12,7 +12,7 @@ package app.revanced.patches.ads.patch
 // Imports
 
 @Patch
-@Name("disable-ads")
+@Name("Disable ads")
 @Description("Disables ads.")
 @DependsOn([DisableAdResourcePatch:class])
 @Compatibility([Package("com.some.app", arrayOf("0.1.0"))])
@@ -45,7 +45,7 @@ Lets start with understanding, how a patch is structured. A patch is mainly buil
 
    ```kt
    @Patch
-   @Name("disable-ads")
+   @Name("Disable Ads")
    @Description("Disables ads.")
    @DependsOn([DisableAdResourcePatch:class])
    @Compatibility([Package("com.some.app", arrayOf("0.1.0"))])
@@ -58,7 +58,7 @@ Lets start with understanding, how a patch is structured. A patch is mainly buil
 
      Example: _To add settings switches to an app, first, a patch is required that can provide a basic framework for other patches to add their toggles to that app. Those patches refer to the dependency patch and use its framework to add their toggles to an app. [ReVanced Patcher](https://github.com/revanced/revanced-patcher) will execute the dependency and then the patch itself. The dependency can prepare a preference screen when executed and then initialize itself for further use by other patches._
 
-   - Visible patches **should** be annotated with `@Name`. This annotation does not serve any functional purpose. Instead, it allows referring to the patch with a name. [ReVanced Patches](https://github.com/revanced/revanced-patches) use _kebab-casing_ by convention, but any name can be used for patches. Patches with no `@Patch` annotation do not require the `@Name` annotation, because they are only useable as dependencies for other patches, and therefore are not visible through `PatchBundle`.
+   - Visible patches **should** be annotated with `@Name`. This annotation does not serve any functional purpose. Instead, it allows referring to the patch with a name. [ReVanced Patches](https://github.com/revanced/revanced-patches) use _Sentence casing_ by convention, but any name can be used for patches. Patches with no `@Patch` annotation do not require the `@Name` annotation, because they are only useable as dependencies for other patches, and therefore are not visible through `PatchBundle`.
 
    - Visible patches should be annotated with `@Description`. This annotation serves the same purpose as the annotation `@Name`. It is used to give the patch a short description.
 
@@ -154,7 +154,7 @@ package app.revanced.patches.examples.minimal.patch
 // Imports
 
 @Patch
-@Name("minimal-demonstration")
+@Name("Minimal Demonstration")
 @Description("Demonstrates a minimal implementation of a patch.")
 @Compatibility([Package("com.some.app")])
 class MinimalExamplePatch : BytecodePatch() {
