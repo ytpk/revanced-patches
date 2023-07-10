@@ -18,7 +18,7 @@ import app.revanced.util.gms.GmsCoreBytecodeHelper
 
 @Patch
 @DependsOn([GmsCoreResourcePatch::class])
-@Name("gms-core-support")
+@Name("GmsCore support")
 @Description("Allows YouTube to run without root and under a different package name.")
 @MusicCompatibility
 @Version("0.0.2")
